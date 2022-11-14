@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Pet</title>
+            <style>
+                html {
+            background-color: orangered;
+        }
+
+        table {
+            text-align: center;
+            width: 100%;
+            border: 1px solid;
+        }
+
+        th {
+            font-size: xx-large;
+            text-decoration: underline;
+        }
+
+       tbody tr:hover {
+            background-color: tomato;
+            font-size: x-large;
+        }
+
+        tr {
+            font-size: large;
+        }
+
+        .container {
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 5%;
+            border-radius: 5px;
+            background-color: yellow;
+            padding: 20px;
+        }
+            </style>
+    </head>
+    <body>
+        <p style="text-align: center; font-size: 100px;">PET</p>
+        <div class="container">
+            <table><thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Weight</th>
+                <th>Type</th>
+                <th>Favourite Thing</th>
+            </thead>
+                <tbody id="a">
+                </tbody>
+            </table>
+        </div>
+        <script>
+            setTimeout(loadDoc(), 0);
+            function loadDoc() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', "jSONPet.json", true);
+                xhr.send();
+                xhr.onreadystatechange = function () {
+                     if (this.readyState == 4 && this.status == 200) {
+                        var x = JSON.parse(this.response);
+                        var temp = "";
+                        for (var i = 0; i < Object.keys(x.jSONPet).length; i++) {
+                            temp = temp.concat("<tr><td>" + x.jSONPet[i].name + "</td><td>" +
+                                 x.jSONPet[i].age + "</td><td>" + x.jSONPet[i].weight + "</td><td>" + 
+                                    x.jSONPet[i].type + "</td><td>" + x.jSONPet[i].thing +
+                                         "</td></tr>");
+                            document.getElementById("a").innerHTML = temp;
+                        }
+                    }
+                };
+               };
+        </script>
+    </body>
+</html>

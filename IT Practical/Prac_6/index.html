@@ -1,0 +1,44 @@
+<html>
+    <head>
+	<meta charset="UTF-8">
+	<title> Pet Information </title>
+    </head>
+    <body>
+        <div id="header">
+                <h2>Enter your Pet Information</h2>
+        </div>
+        <div id="main">
+            <form id="pet_info-form" >
+                <div>
+                    <label>Name: </label>
+                    <input id="name" type="text" name="name" required />
+                </div>
+                <div>
+                    <label>Age: </label>
+                    <input id="age" type="text" name="age" required />
+                </div>
+                <div>
+                    <label>Weight: </label>
+                    <input id="weight" type="text" name="weight" placeholder="weight(in Kgs)" required />
+                </div>
+                <div>
+                    <label for="pet_type">Type: </label>
+                    <select name="type" id="type">i
+                        <option value="dog">dog</option>
+                        <option value="cat">cat</option>
+                        <option value="rat">rat</option>
+                        <option value="rabbit">rabbit</option>
+                    </select>
+                </div>
+                <div>
+                    <label>What it likes Most: </label>
+                    <input id="like" type="text" name="like" required />
+                </div>
+                <div>
+                    <input type="button" id="button" value="Save" onclick="formObj()" />
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript" src="E:/Books/Computer Science/Year 3/Semester 5/IT Practical/Prac_6/custom.js"> </script>
+    </body>
+</html>

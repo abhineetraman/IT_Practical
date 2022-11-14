@@ -1,0 +1,18 @@
+{
+"jSONPet": [
+    {
+        "name": "Zophia",
+        "age": "5",
+        "weight": "11",
+        "type": "Bird",
+        "thing": "Spice"
+    },
+    {
+        "name": "Kiira",
+        "age": "5",
+        "weight": "22",
+        "type": "Dog",
+        "thing": "Chicken"
+    }
+]
+}
